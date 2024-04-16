@@ -36,6 +36,7 @@ userSchema.pre('save', async function(next) {
   }
 });
 
+// Checking and comparing the password
 userSchema.methods.checkPassword = async function(passwordAttempt) {
   try {
       const isMatch = await bcrypt.compare(passwordAttempt, this.password);
@@ -45,7 +46,7 @@ userSchema.methods.checkPassword = async function(passwordAttempt) {
   }
 };
 
-// mothod to remove users password for token and sending the response
+// method to remove users password for token and sending the response
 
 userSchema.methods.withoutPassword = function(){
   const user = this.toObject()

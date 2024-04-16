@@ -31,7 +31,7 @@ export default function WisherForm(props) {
 
   return (
     <div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="form">
       <input 
         type="text" 
         name="name" 
@@ -50,7 +50,7 @@ export default function WisherForm(props) {
         value={needBy} 
         onChange={handleChange} 
         placeholder="Needed by?"/>
-      <button>Add Post</button>
+      <button className='adder'>Add Person</button>
     </form>
     </div>
   )

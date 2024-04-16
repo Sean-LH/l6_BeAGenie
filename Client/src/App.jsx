@@ -7,7 +7,7 @@ import AuthPage from './Components/AuthPage'
 import Navbar from './Components/Navbar'
 import HomePage from './Components/HomePage'
 import Gifts from './Components/Gifts'
-
+import './final.css'
 
 
 function App() {
@@ -25,8 +25,8 @@ function App() {
             />
           <Route
             path='/home'
-            // element={!token? <Navigate to="/"/>: <HomePage/>}
-            element={ <HomePage/>}
+            element={!token? <Navigate to="/"/>: <HomePage/>}
+            // element={ <HomePage/>}
             />
           <Route
             path='/gifts/:wisherId'

@@ -1,0 +1,52 @@
+*{
+  box-sizing: border-box;
+  border: none;
+}
+
+.app{
+  background-color: #c7f9aa;
+  border:#9a00ea solid 4.5px
+}
+.navbar{
+  background-color: #23a2c0;
+  height: 2em;
+  display: flex;
+  margin-top: 1em;
+}
+.authorize{
+  border: 2px #d42f11 solid;
+}
+
+.wishersList{
+  border: 4px #d42f11 solid
+}
+
+.person{
+  border: 1px dashed #d42f11
+}
+
+.items_page{
+  border: 1px solid #d42f11
+}
+
+.adder{
+color:#9a00ea
+}
+
+.deleter{
+color: #23a2c0;
+background-color: #edd4cf;
+}
+
+.updater{
+color: #d42f11;
+background-color: rgb(186, 214, 238);
+}
+
+.out{
+  background-color: #d42f11;
+}
+
+.form{
+  margin: 2em 
+}

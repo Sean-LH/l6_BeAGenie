@@ -39,8 +39,8 @@ const filteredGifts = gifts.filter(gift => gift.wisher=== wisherId)
 
   const giftList = filteredGifts.map(gift=> <Gift {...gift} key={gift._id} removeGift={removeGift}/>)
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="items_page">
+      <form onSubmit={handleSubmit} className="form">
         <input
           name='name'
           value={inputs.name}
@@ -60,8 +60,9 @@ const filteredGifts = gifts.filter(gift => gift.wisher=== wisherId)
           onChange={handleChange}
           placeholder="How much is it?"
         />
-        <button>Add Gift</button>
+        <button className="adder">Add Gift</button>
       </form>
+      <h2>You've decided to get:</h2>
       {giftList}
     </div>
   )

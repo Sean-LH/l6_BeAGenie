@@ -138,7 +138,7 @@ export default function UserProvider(props) {
       })
       .catch(err => console.log(err))
   }
-
+  console.log('gifts', gifts)
   function addGift(Id, inputs){
     userAxios.post(`/api/main/items/${Id}`,inputs)
       .then(res => setGifts(prevGifts => [...prevGifts, res.data]))
@@ -149,17 +149,17 @@ export default function UserProvider(props) {
     userAxios.delete(`/api/main/items/${Id}`)
       .then(res => {
         console.log(res)
-        console.log(prevGifts)
+        // console.log(prevGifts)
       setGifts(prevGifts => prevGifts.filter(gift => gift._id !==Id))
-      .catch(err => console.log(err))
-  })
-
+    })
+    .catch(err => console.log(err))
+  }
   return (
     <UserContext.Provider value ={{...userState, signup, login, logout, resetAuthErr, addWisher, getAll, deleteWishers, editWisher, gifts, getAllGifts, addGift, removeGift}}>
       {props.children}
     </UserContext.Provider>
   )
-}}
+}
 
 
 export  {UserProvider, UserContext }

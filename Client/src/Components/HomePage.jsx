@@ -12,7 +12,7 @@ export default function HomePage() {
   return (
     <div className="profile">
         <h1>Welcome @{username} to your page!</h1>
-        <h3>Add Your Post</h3>
+        <h3>Add Your person's name, the occasion, and when you'll need the gift</h3>
         <WisherForm addWisher ={addWisher}/>
         <h3>Who is getting gifts?</h3>
         <WishersList wishers={wishers} getAll ={getAll}/>

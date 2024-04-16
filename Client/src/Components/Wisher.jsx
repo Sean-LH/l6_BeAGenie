@@ -42,14 +42,12 @@ function handleNav(){
   return (
     <div className='person'>
       <>
-      <h3>{name}</h3>
-      <h5>{moment(needBy).format("MMM Do YY")}</h5>
-      <h4>{occasion}</h4>
-      {/* <button onClick={()=> deleteIssues(_id)}>Delete</button>
-      <button onClick = {editing}>Edit</button> */}
+      <h2>The person: {name}</h2>
+      <h3>Needed by: {moment(needBy).format("MMM Do YY")}</h3>
+      <h4>The reason is: {occasion}</h4>
       <button onClick={handleNav}>Gifts</button>
-      <button onClick={handleTogge}>{startEdit?'Cancel':'Edit'}</button>
-      <button onClick={()=> deleteWishers(_id)}>Delete</button>
+      <button onClick={handleTogge} className="updater">{startEdit?'Cancel':'Edit'}</button>
+      <button onClick={()=> deleteWishers(_id)} className="deleter">Delete</button>
       </>
       {startEdit && <>
       <form onSubmit={handleSubmit}>
@@ -69,7 +67,7 @@ function handleNav(){
         value = {inputs.occasion}
         onChange={handleChange}
         />
-        <button>Update</button>
+        <button className='updater'>Update</button>
       </form>
       </>}
     </div>

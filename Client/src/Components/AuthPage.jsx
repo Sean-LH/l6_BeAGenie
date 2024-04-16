@@ -41,7 +41,9 @@ export default function AuthPage() {
   }
   return (
     <div>
-      <h1>Rock The Vote!</h1>
+      <h1>Welcome to your Be a Genie App</h1>
+      <h3>Here, you can be a genie for those you care about</h3>
+      <h3>Login and start making your lists</h3>
     { !toggle ?
       <>
         <AuthForm 
@@ -50,6 +52,7 @@ export default function AuthPage() {
           inputs={inputs}
           btnText="Sign up"
           errMsg = {errMsg}
+          class="authorize"
         />
         <p onClick={toggleForm}>Already a member?</p>
       </>
@@ -61,6 +64,7 @@ export default function AuthPage() {
           inputs={inputs}
           btnText="Login"
           errMsg = {errMsg}
+          class="authorize"
         />
         <p onClick={toggleForm}>Not a member?</p>
       </>
