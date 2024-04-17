@@ -7,7 +7,7 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 const {expressjwt: jwt} = require('express-jwt')
 
-const authRouter = require('./routes/authRouter')
+const authRouter = require('./Routes/authRouter')
 const wishersRouter = require('./Routes/wishersRouter')
 const itemRouter = require('./Routes/itemRouter')
 
