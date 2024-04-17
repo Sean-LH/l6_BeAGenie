@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import Wisher from '../Components/Wisher'
+import Wisher from './Wisher'
 
 
 export default function WishersList(props) {
