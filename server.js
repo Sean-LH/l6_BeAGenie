@@ -11,10 +11,13 @@ const authRouter = require('./Routes/authRouter')
 const wishersRouter = require('./Routes/wishersRouter')
 const itemRouter = require('./Routes/itemRouter')
 
+const path = require("path")
+
 //  Middleware
 
 app.use(express.json())
 app.use(morgan('dev'))
+app.use(express.static(path.join(__dirname, "client", "dist")))
 
 mongoose.connect('mongodb+srv://slhorace01:pqH7GaEV2ScHFdLT@wishcluster.cnoudmp.mongodb.net/?retryWrites=true&w=majority&appName=wishCluster')
 .then(()=>{
@@ -40,6 +43,10 @@ app.use( (err, req, res, next) =>{
   }
   return res.send({errMsg: err.message})
 })
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+});
 
 app.listen(9000,()=>{console.log("Active on port 9000")})
 
