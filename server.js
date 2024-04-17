@@ -13,13 +13,15 @@ const itemRouter = require('./Routes/itemRouter')
 
 const path = require("path")
 
+
 //  Middleware
 
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express.static(path.join(__dirname, "client", "dist")))
+app.use(express.static(path.join(__dirname, "Client", "dist")))
 
 mongoose.connect('mongodb+srv://slhorace01:pqH7GaEV2ScHFdLT@wishcluster.cnoudmp.mongodb.net/?retryWrites=true&w=majority&appName=wishCluster')
+// mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 .then(()=>{
   console.log('Connected to the DB')
 })
@@ -45,7 +47,7 @@ app.use( (err, req, res, next) =>{
 })
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "Client", "dist", "index.html"));
 });
 
 app.listen(9000,()=>{console.log("Active on port 9000")})
